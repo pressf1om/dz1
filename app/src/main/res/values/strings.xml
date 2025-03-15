@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">3</string>
+    <string name="fio">Enter full name</string>
+    <string name="group">Enter group number</string>
+    <string name="age">Enter age</string>
+    <string name="mark">Enter grade</string>
+
+    <string name="name">Name:</string>
+    <string name="getgroup">Group:</string>
+    <string name="getage">Age:</string>
+    <string name="getmark">Grade:</string>
+
+</resources>

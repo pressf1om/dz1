@@ -1,63 +1,98 @@
 package com.test.troetskiymatveyvladislavovich;
 
-package com.example.lifecycleapp;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent;
+import android.view.View;
+import android.widget.EditText;
+import android.util.Log;
+
+
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate() вызван");
-
-        // Переход на вторую активность программно
-        Button btnProgrammatic = findViewById(R.id.btn_programmatic);
-        btnProgrammatic.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            intent.putExtra("fullName", "Троецкий Матвей Владиславович");
-            intent.putExtra("group", "ИКБО-67-23");
-            intent.putExtra("age", 19);
-            intent.putExtra("grade", 5);
-            startActivity(intent);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
     }
+    public void RealativeOn(View view) {
+        EditText editName = findViewById(R.id.name);
+        EditText editGroup = findViewById(R.id.group);
+        EditText editAge = findViewById(R.id.age);
+        EditText editMark = findViewById(R.id.mark);
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart() вызван");
+        String name = editName.getText().toString();
+        String group = editGroup.getText().toString();
+        int age = Integer.parseInt(editAge.getText().toString());
+        int mark = Integer.parseInt(editMark.getText().toString());
+
+        MyObject myObject = new MyObject(name, group, age, mark);
+        Intent intent = new Intent(this, RelativeActivity.class);
+        intent.putExtra("myObject", myObject);
+        startActivity(intent);
+
+    }
+    public void ConstrationOn(View view) {
+        EditText editName = findViewById(R.id.name);
+        EditText editGroup = findViewById(R.id.group);
+        EditText editAge = findViewById(R.id.age);
+        EditText editMark = findViewById(R.id.mark);
+
+        String name = editName.getText().toString();
+        String group = editGroup.getText().toString();
+        int age = Integer.parseInt(editAge.getText().toString());
+        int mark = Integer.parseInt(editMark.getText().toString());
+
+        MyObject myObject = new MyObject(name, group, age, mark);
+        Intent intent = new Intent(this, ConstraintActivity.class);
+        intent.putExtra("myObject", myObject);
+        startActivity(intent);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume() вызван");
+    public void FrameOn(View view) {
+        EditText editName = findViewById(R.id.name);
+        EditText editGroup = findViewById(R.id.group);
+        EditText editAge = findViewById(R.id.age);
+        EditText editMark = findViewById(R.id.mark);
+
+        String name = editName.getText().toString();
+        String group = editGroup.getText().toString();
+        int age = Integer.parseInt(editAge.getText().toString());
+        int mark = Integer.parseInt(editMark.getText().toString());
+
+        MyObject myObject = new MyObject(name, group, age, mark);
+        Intent intent = new Intent(this, FrameActivity.class);
+        intent.putExtra("myObject", myObject);
+        startActivity(intent);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause() вызван");
+    public void LinearOn(View view) {
+        EditText editName = findViewById(R.id.name);
+        EditText editGroup = findViewById(R.id.group);
+        EditText editAge = findViewById(R.id.age);
+        EditText editMark = findViewById(R.id.mark);
+
+        String name = editName.getText().toString();
+        String group = editGroup.getText().toString();
+        int age = Integer.parseInt(editAge.getText().toString());
+        int mark = Integer.parseInt(editMark.getText().toString());
+
+        MyObject myObject = new MyObject(name, group, age, mark);
+        Intent intent = new Intent(this, LinearActivity.class);
+        intent.putExtra("myObject", myObject);
+        startActivity(intent);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop() вызван");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy() вызван");
-    }
 }

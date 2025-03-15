@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">мобилкипрак3</string>
+    <string name="fio">Введите ФИО</string>
+    <string name="group">Введите номер группы</string>
+    <string name="age">Введите возраст</string>
+    <string name="mark">Введите оценку</string>
+
+    <string name="name">Имя:</string>
+    <string name="getgroup">Группа:</string>
+    <string name="getage">Возраст:</string>
+    <string name="getmark">Оценка:</string>
+
+</resources>

@@ -2,54 +2,131 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:hint="@string/fio"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/group"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:hint="@string/group"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:hint="@string/age"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/mark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group" />
+
+    <EditText
+        android:id="@+id/mark"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="108dp"
+        android:gravity="center"
+        android:hint="@string/mark"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/constationOpen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <Button
+        android:id="@+id/realeativeOpen"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="RealativeOn"
+        android:text="realeative layout"
+        android:textSize="19sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/constationOpen"
+        app:layout_constraintEnd_toStartOf="@+id/constationOpen"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/constationOpen"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="97dp"
+        android:onClick="ConstrationOn"
+        android:text="constation layout"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/LinearOpen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/realeativeOpen"
+        app:layout_constraintTop_toBottomOf="@+id/mark" />
+
+    <Button
+        android:id="@+id/FrameOpen"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="FrameOn"
+        android:text="Frame layout"
+        android:textSize="19sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/LinearOpen"
+        app:layout_constraintEnd_toStartOf="@+id/LinearOpen"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/LinearOpen"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="334dp"
+        android:onClick="LinearOn"
+        android:text="linear layout"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/FrameOpen"
+        app:layout_constraintTop_toBottomOf="@+id/constationOpen" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:id="@+id/imageView2"
+        android:layout_width="317dp"
+        android:layout_height="203dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:srcCompat="@tools:sample/avatars" />
-    <Button
-        android:id="@+id/btn_programmatic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Открыть SecondActivity (Программно)" />
-
-    <Button
-        android:id="@+id/btn_declarative"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Открыть SecondActivity (Декларативно)"
-        android:onClick="openSecondActivity" />
-
+        app:layout_constraintTop_toBottomOf="@+id/mark"
+        app:layout_constraintVertical_bias="0.81"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

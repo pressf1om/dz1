@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintActivity">
+
+
+    <TextView
+        android:id="@+id/lin_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="464dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lin_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="262dp"
+        android:layout_marginBottom="60dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lin_age"
+        app:layout_constraintStart_toStartOf="@+id/lin_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lin_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lin_mark"
+        app:layout_constraintStart_toStartOf="@+id/lin_group"
+        app:layout_constraintTop_toBottomOf="@+id/lin_group" />
+
+    <TextView
+        android:id="@+id/lin_mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="168dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/lin_age"
+        app:layout_constraintTop_toBottomOf="@+id/lin_age" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="129dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="299dp"
+        android:onClick="goBack"
+        android:text="Назад"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lin_mark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
